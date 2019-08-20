@@ -67,6 +67,12 @@ type DEEPBook struct {
 	Asks []BidAsk `json:"asks"`
 }
 
+// DEEPSystemEvent contains the current system state
+type DEEPSystemEvent struct {
+	SystemEvent	string		`json:"systemEvent"`
+	Timestamp	EpochTime	`json:"timestamp"`
+}
+
 // VolumeRecord models the record volume.
 type VolumeRecord struct {
 	Value            float64 `json:"recordValue"`

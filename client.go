@@ -745,6 +745,14 @@ func (c Client) DEEPBook(symbols []string) (map[string]DEEPBook, error) {
 	return r, err
 }
 
+// DEEPSystemEvent provides DEEP current system event.
+func (c Client) DEEPSystemEvent() (DEEPSystemEvent, error) {
+	r := DEEPSystemEvent{}
+	endpoint := "/deep/system-event"
+	err := c.GetJSON(endpoint, &r)
+	return r, err
+}
+
 // DEEPTrades provides DEEP trades data for multiple symbols.
 func (c Client) DEEPTrades(symbols []string) (map[string][]Trade, error) {
 	r := make(map[string][]Trade)
